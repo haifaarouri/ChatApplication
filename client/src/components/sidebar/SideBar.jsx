@@ -4,8 +4,14 @@ import SearchBar from "./SearchInput";
 
 const SideBar = () => {
   return (
-    <div className="flex flex-col py-8 pl-6 pr-2 w-64 bg-white flex-shrink-0">
-      <img className="p-3" src="logo-removebg-preview.png" alt="logo" />
+    <div className="flex flex-col py-4 pl-6 pr-2 w-64 flex-shrink-0">
+      <div className="flex justify-center">
+        <img
+          className="mb-2 p-3 w-40"
+          src="logo-removebg-preview.png"
+          alt="logo"
+        />
+      </div>
       {/* <div className="flex flex-row items-center justify-center h-12 w-full">
         <div className="flex items-center justify-center rounded-2xl text-indigo-700 bg-indigo-100 h-10 w-10">
           <svg

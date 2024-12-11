@@ -2,26 +2,19 @@ import { BiLogOut } from "react-icons/bi";
 
 const ProfileInfo = () => {
   return (
-    <div className="flex flex-col items-center bg-indigo-100 border border-gray-200 mt-4 w-full py-6 px-4 rounded-lg">
-      <div className="h-20 w-20 rounded-full border overflow-hidden">
+    <div className="flex justify-between items-center w-64 py-6 px-4 rounded-lg bg-sky-100">
+      <div className="h-20 w-20 rounded-full border overflow-hidden shadow-2xl">
         <img
-          src="https://avatars3.githubusercontent.com/u/2763884?s=128"
+          src="https://avatar.iran.liara.run/public/girl"
           alt="Avatar"
           className="h-full w-full"
         />
       </div>
-      <div className="text-sm font-semibold mt-2">Aminos Co.</div>
-      {/* <div className="text-xs text-gray-500">Lead UI/UX Designer</div>
-      <div className="flex flex-row items-center mt-3">
-        <div className="flex flex-col justify-center h-4 w-8 bg-indigo-500 rounded-full">
-          <div className="h-3 w-3 bg-white rounded-full self-end mr-1" />
-        </div>
-        <div className="leading-none ml-1 text-xs">Active</div>
-      </div> */}
-      <div className="mt-auto">
+      <div className="text-sm font-semibold mt-2">Haifa Arouri</div>
+      <div className="text-sky-400 cursor-pointer">
         {/* {!loading ? ( */}
         <BiLogOut
-          className="w-6 h-6 text-white cursor-pointer"
+          className="w-6 h-6 hover:shadow-xl hover:rounded-full"
           // onClick={logout}
         />
         {/* ) : (
