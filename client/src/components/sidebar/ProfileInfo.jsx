@@ -1,4 +1,4 @@
-import { BiLogOut } from "react-icons/bi";
+import LogoutButton from "./LogoutButton";
 
 const ProfileInfo = () => {
   return (
@@ -12,14 +12,7 @@ const ProfileInfo = () => {
       </div>
       <div className="text-sm font-semibold mt-2">Haifa Arouri</div>
       <div className="text-sky-400 cursor-pointer">
-        {/* {!loading ? ( */}
-        <BiLogOut
-          className="w-6 h-6 hover:shadow-xl hover:rounded-full"
-          // onClick={logout}
-        />
-        {/* ) : (
-				<span className='loading loading-spinner'></span>
-			)} */}
+        <LogoutButton />
       </div>
     </div>
   );
