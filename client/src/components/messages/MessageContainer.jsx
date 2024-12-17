@@ -4,6 +4,7 @@ import { TiMessages } from "react-icons/ti";
 import useConversation from "../../zustand/useConversation";
 import { useEffect } from "react";
 import { useAuthContext } from "../../context/AuthContext";
+import { MdNextPlan } from "react-icons/md";
 
 const MessageContainer = () => {
   const { selectedConversation, setSelectedConversation } = useConversation();
@@ -20,8 +21,15 @@ const MessageContainer = () => {
           <NoChatSelected />
         ) : (
           <>
-            <div className="bg-sky-300 px-4 py-2 mb-3 rounded-lg">
-              <span className="label-text">To:</span>{" "}
+            <div className="flex bg-sky-300 px-4 py-2 mb-3 rounded-lg">
+              <MdNextPlan
+                className="hover:cursor-pointer md:hidden"
+                color="rgb(8 51 68)"
+                size={26}
+                style={{ transform: "rotate(180deg) scaleY(-1)" }}
+                onClick={() => setSelectedConversation(null)}
+              />
+              <span className="label-text ml-4 mr-1">To :</span>{" "}
               <span className="text-gray-900 font-bold">
                 {selectedConversation.fullName}
               </span>
