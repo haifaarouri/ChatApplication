@@ -12,6 +12,7 @@ export const SocketContextProvider = ({ children }) => {
   const [socket, setSocket] = useState(null);
   const [onlineUsers, setOnlineUsers] = useState([]);
   const { authUser } = useAuthContext();
+  const [typingUser, setTypingUser] = useState(null);
 
   useEffect(() => {
     if (authUser) {
@@ -37,8 +38,26 @@ export const SocketContextProvider = ({ children }) => {
     }
   }, [authUser]);
 
+  // Emit typing events
+  const emitTyping = (receiverId) => {
+    socket?.emit("typing", { senderId: authUser._id, receiverId });
+  };
+
+  const emitStopTyping = (receiverId) => {
+    socket?.emit("stopTyping", { senderId: authUser._id, receiverId });
+  };
+
   return (
-    <SocketContext.Provider value={{ socket, onlineUsers }}>
+    <SocketContext.Provider
+      value={{
+        socket,
+        onlineUsers,
+        emitTyping,
+        emitStopTyping,
+        typingUser,
+        setTypingUser,
+      }}
+    >
       {children}
     </SocketContext.Provider>
   );

@@ -5,9 +5,11 @@ import useConversation from "../../zustand/useConversation";
 import { useEffect } from "react";
 import { useAuthContext } from "../../context/AuthContext";
 import { MdNextPlan } from "react-icons/md";
+import { useSocketContext } from "../../context/SocketContext";
 
 const MessageContainer = () => {
   const { selectedConversation, setSelectedConversation } = useConversation();
+  const { typingUser } = useSocketContext();
 
   useEffect(() => {
     // cleanup function (when component is unmount), set the selected conversation to null
@@ -37,6 +39,13 @@ const MessageContainer = () => {
             <div className="flex flex-col h-full overflow-x-auto mb-4">
               <div className="flex flex-col h-full">
                 <Messages />
+                {typingUser === selectedConversation._id && (
+                  <div className="typing-indicator">
+                    <span className="dot"></span>
+                    <span className="dot"></span>
+                    <span className="dot"></span>
+                  </div>
+                )}
               </div>
             </div>
             <MessageInput />
